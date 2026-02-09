@@ -20,7 +20,17 @@ class MainActivity : ComponentActivity() {
             MEPARScannerTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-                    MepApp()
+                    val context = androidx.compose.ui.platform.LocalContext.current
+                    val db = androidx.room.Room.databaseBuilder(
+                        context,
+                        com.example.meparscanner.data.AppDatabase::class.java, "mep-database"
+                    ).build()
+                    val inventoryRepo = com.example.meparscanner.data.repository.InventoryRepository(db.inventoryDao())
+                    val standardHeightRepo = com.example.meparscanner.data.repository.StandardHeightRepository(db.standardHeightDao())
+                    val gson = com.google.gson.Gson()
+                    val projectExporter = com.example.meparscanner.domain.export.ProjectExporter(inventoryRepo, standardHeightRepo, gson)
+
+                    MepApp(projectExporter)
                 }
             }
         }
