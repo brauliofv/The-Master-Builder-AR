@@ -3,7 +3,7 @@ package com.example.meparscanner.ui.screens
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.Divider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -37,7 +37,7 @@ fun InventoryScreen(inventoryRepository: InventoryRepository) {
                             Text(text = "${item.quantity} ${item.unit}", style = MaterialTheme.typography.bodyLarge)
                         }
                         Text(text = "Type: ${item.itemType}", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.secondary)
-                        HorizontalDivider(modifier = Modifier.padding(top = 8.dp))
+                        Divider(modifier = Modifier.padding(top = 8.dp))
                     }
                 }
             }
