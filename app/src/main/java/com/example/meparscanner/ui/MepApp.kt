@@ -11,8 +11,10 @@ import com.example.meparscanner.ui.screens.InventoryScreen
 import com.example.meparscanner.domain.export.ProjectExporter
 import com.example.meparscanner.ui.screens.FeedbackScreen
 
+import com.example.meparscanner.data.repository.InventoryRepository
+
 @Composable
-fun MepApp(projectExporter: ProjectExporter) {
+fun MepApp(projectExporter: ProjectExporter, inventoryRepository: InventoryRepository) {
     val navController = rememberNavController()
 
     NavHost(navController = navController, startDestination = "home") {
@@ -24,10 +26,10 @@ fun MepApp(projectExporter: ProjectExporter) {
             )
         }
         composable("ar") {
-            ArScreen()
+            ArScreen(inventoryRepository)
         }
         composable("inventory") {
-            InventoryScreen()
+            InventoryScreen(inventoryRepository)
         }
         composable("feedback") {
             FeedbackScreen(projectExporter)

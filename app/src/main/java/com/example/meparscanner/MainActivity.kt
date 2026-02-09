@@ -30,7 +30,7 @@ class MainActivity : ComponentActivity() {
                     val gson = com.google.gson.Gson()
                     val projectExporter = com.example.meparscanner.domain.export.ProjectExporter(inventoryRepo, standardHeightRepo, gson)
 
-                    MepApp(projectExporter)
+                    MepApp(projectExporter, inventoryRepo)
                 }
             }
         }
