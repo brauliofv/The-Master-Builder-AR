@@ -12,6 +12,7 @@ arcore = "1.41.0"
 room = "2.6.1"
 gson = "2.10.1"
 navCompose = "2.7.6"
+ksp = "1.9.0-1.0.13"
 
 [libraries]
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navCompose" }
@@ -38,3 +39,4 @@ google-gson = { group = "com.google.code.gson", name = "gson", version.ref = "gs
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+google-devtools-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
