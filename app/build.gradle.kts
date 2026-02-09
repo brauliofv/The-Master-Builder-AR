@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    id("com.google.devtools.ksp") version "1.9.0-1.0.13" // Adding KSP manually for Room if needed, using kapt for now in libs or just ksp
+    alias(libs.plugins.google.devtools.ksp)
 }
 
 android {
@@ -65,12 +65,7 @@ dependencies {
     // Room
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
-    // kapt(libs.androidx.room.compiler) // Using KSP usually, but for simplicity in setup we might use kapt or add plugin. 
-    // Let's assume standard kapt/ksp setup. For now, adding annotationProcessor/ksp equivalent.
-    // simpler:
-    implementation("androidx.room:room-runtime:2.6.1")
-    annotationProcessor("androidx.room:room-compiler:2.6.1") // Java/Kotlin mixed
-    // For pure Kotlin usually ksp. I will stick to implementation for now and user can fix build if plugin missing.
+    ksp(libs.androidx.room.compiler)
     
     // GSON
     implementation(libs.google.gson)
