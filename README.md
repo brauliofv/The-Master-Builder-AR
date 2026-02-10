@@ -59,6 +59,23 @@ Engineered to leverage the **120Hz** refresh rate and high-precision sensor fusi
 
 ---
 
+## 🏗️ Configuración de Campo (Punto de Origen)
+
+Para garantizar la precisión y la persistencia de los planos, la app utiliza un **Marcador QR** como el "Cero Absoluto" (0,0,0) del proyecto.
+
+### Requisitos del Marcador
+*   **Imagen**: Utilizar el código QR en `app/src/main/assets/qr_marker.png`.
+*   **Impresión**: Imprimir exactamente a **15 cm x 15 cm**.
+*   **Colocación**: Pegar en una superficie plana fija (piso o pared) que servirá de origen para todo el escaneo.
+
+### Cómo usar
+1.  Inicia el modo AR.
+2.  Apunta al QR hasta que aparezca el indicador de "Origen Detectado".
+    *   Este paso calibra la escala real (1:1) y fija las coordenadas.
+3.  Si sales de la app y vuelves, al ver el mismo QR se recuperará la posición de todos los elementos MEP previos.
+
+---
+
 ## 🗺️ Roadmap
 - [ ] Multi-user Cloud Anchors (Colaboración en tiempo real).
 - [ ] Soporte para escaneo Lidar (iPhone/iPad port logic).

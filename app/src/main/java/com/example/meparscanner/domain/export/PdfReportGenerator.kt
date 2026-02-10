@@ -5,6 +5,7 @@ import java.io.File
 class PdfReportGenerator {
 
     fun generateReport(jsonContext: String): File? {
+        println("Generating report for context: $jsonContext")
         // Validation: Check internet or if "High-Order LLM" response is available.
         // Logic: 
         // 1. Send JSON to Gemini Pro (mocked here)
